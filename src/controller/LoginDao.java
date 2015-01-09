@@ -16,7 +16,11 @@ public class LoginDao {
     }
 
     public int insertUser(LoginBean e){
-        String query="insert into users values('"+e.getName()+"','"+e.getPassword()+"')";
+        String query = "Select * from USERS where name='"+e.getName()+"'";
+        List<LoginBean> userList = jdbcTemplate.query(query , new UserRowMapper());
+        if(!userList.isEmpty()) return -1;
+
+        query="insert into users values('"+e.getName()+"','"+e.getPassword()+"')";
         return jdbcTemplate.update(query);
     }
 

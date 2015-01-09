@@ -28,7 +28,7 @@
                     <input type="submit" value="Submit"/>
                 </td>
                 <td>
-                    <a href="register.jsp"><input type="button" value="Register"/></a>
+                    <a href="reg.jsp"><input type="button" value="Register"/></a>
                 </td>
             </tr>
         </table>
