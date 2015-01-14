@@ -8,11 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Register</title>
 </head>
 <body>
 <h1>Enter Registration Details</h1>
-<form action="register.html">
+<form action="register.html" method="post">
     <table>
         <tr>
             <td><h3>Username: </h3></td>

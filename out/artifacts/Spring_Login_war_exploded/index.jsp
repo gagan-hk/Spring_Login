@@ -13,7 +13,7 @@
 <body>
 <div>
     <h1>Enter Login Details</h1>
-    <form action="login.html">
+    <form action="login.html" method="post">
         <table>
             <tr>
                 <td><h3>Username: </h3></td>
@@ -30,9 +30,13 @@
                 <td>
                     <a href="reg.jsp"><input type="button" value="Register"/></a>
                 </td>
+
             </tr>
         </table>
     </form>
 </div>
+<form action = "disp_all.html" method="get">
+    <input type="submit" value="All Emplyees"/>
+</form>
 </body>
 </html>

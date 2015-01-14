@@ -15,13 +15,15 @@ public class LoginDao {
         this.jdbcTemplate = jdbcTemplate;
     }
 
-    public int insertUser(LoginBean e){
+    public boolean insertUser(LoginBean e){
         String query = "Select * from USERS where name='"+e.getName()+"'";
         List<LoginBean> userList = jdbcTemplate.query(query , new UserRowMapper());
-        if(!userList.isEmpty()) return -1;
+        if(!userList.isEmpty())
+        return false;
 
         query="insert into users values('"+e.getName()+"','"+e.getPassword()+"')";
-        return jdbcTemplate.update(query);
+        jdbcTemplate.update(query);
+        return true;
     }
 
     public boolean validateLogin(LoginBean e) {
@@ -29,5 +31,11 @@ public class LoginDao {
         List<LoginBean> userList = jdbcTemplate.query(query , new UserRowMapper());
         if(userList.isEmpty()) return false;
         else return true;
+    }
+
+    public List<LoginBean> getAll(){
+        String query = "Select * from USERS";
+        List<LoginBean> userList = jdbcTemplate.query(query , new UserRowMapper());
+        return userList;
     }
 }
