@@ -35,7 +35,7 @@
         </table>
     </form>
 </div>
-<form action = "disp_all.html" method="get">
+<form action = "/rest/users">
     <input type="submit" value="All Emplyees"/>
 </form>
 </body>

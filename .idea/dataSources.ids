@@ -7,9 +7,25 @@
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <schema name="" catalog="test"/>
+    <table name="permission" schema="" catalog="test" type="TABLE">
+      <column name="role" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="permission" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="role,permission"/>
+    </table>
+    <table name="role" schema="" catalog="test" type="TABLE">
+      <column name="name" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <column name="role" sqlType="VARCHAR" precision="100" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
+      <primary-key name="PRIMARY" columns="name,role"/>
+      <foreign-key name="role_ibfk_2" columns="name" ref-table="users" ref-schema="" ref-catalog="test" ref-columns="name" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="role_ibfk_1" columns="name" ref-table="users" ref-schema="" ref-catalog="test" ref-columns="name" update-rule="3" delete-rule="3" deferrability="2"/>
+    </table>
     <table name="users" schema="" catalog="test" type="TABLE">
-      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12" def="Jyc="/>
       <column name="pwd" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="manager_name" sqlType="VARCHAR" precision="200" scale="0" nullable="true" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="name"/>
+      <exported-key name="role_ibfk_2" table="role" schema="" catalog="test" columns="name"/>
+      <exported-key name="role_ibfk_1" table="role" schema="" catalog="test" columns="name"/>
     </table>
   </data-source>
 </component>

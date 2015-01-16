@@ -27,8 +27,8 @@ public class RegisterController {
         ApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
         LoginDao dao = (LoginDao)ctx.getBean("ldao");
         boolean status = dao.insertUser(bean);
-        return new ModelAndView("login-success");
-       /* if(status){
+
+        if(status){
             System.out.print(status);
             String s = "<h3>Successful Registration</h3><br>Welcome "+user ;
             System.out.print(s);
@@ -37,6 +37,6 @@ public class RegisterController {
         }else {
             String s = "<h3>Username Already Exists</h3>" ;
             return new ModelAndView("reg-error","message",s);
-        }*/
+        }
     }
 }

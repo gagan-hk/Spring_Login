@@ -29,6 +29,9 @@
     <orderEntry type="library" name="com.fasterxml.jackson.annotations.jar" level="project" />
     <orderEntry type="library" name="com.fasterxml.jackson.annotations" level="project" />
     <orderEntry type="library" name="spring-hateoas-0.16.0.RELEASE" level="project" />
+    <orderEntry type="library" name="jackson-annotations-2.5.0" level="project" />
+    <orderEntry type="library" name="jackson-core-2.5.0" level="project" />
+    <orderEntry type="library" name="jackson-databind-2.5.0" level="project" />
   </component>
 </module>
 
